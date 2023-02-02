@@ -1,0 +1,10 @@
+@import '../variables/themeColors';
+
+.application_dark_mode_theme{
+    background-color: var(--dark-);
+    color: var(--light-);
+}
+.application_light_mode_theme{
+    background-color: var(--light);
+    color: var(--dark-);
+}
