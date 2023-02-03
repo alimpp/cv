@@ -1,3 +1,7 @@
 {
-  "message": "hello world...!"
+  "hello": "Hello,",
+  "name": "I am ali mohsenpour",
+  "position": "The front end developer",
+  "info": "I have been working in the web field for almost 3 years as a person who has taken responsibility for her own development, I am constantly evaluating and improving my skills to stay updated in the field of web development",
+  "tools": "Experience in tools"
 }

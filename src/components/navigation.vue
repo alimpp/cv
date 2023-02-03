@@ -1,9 +1,10 @@
 <template>
   <div class="navigation-container">
     <div class="logo-container">
-      <img src="@/assets/images/logo.png" alt="Logo" />
+      <img class="application_animation" src="@/assets/images/logo.png" alt="Logo" />
     </div>
     <div class="items-container">
+      <languageSwitcher class="mx-2" />
       <themeSwitcher />
     </div>
   </div>
@@ -11,6 +12,7 @@
 
 <script setup>
 import themeSwitcher from "@/components/themeSwitcher";
+import languageSwitcher from "@/components/languageSwitcher";
 </script>
 
 <style lang="scss" scoped>
@@ -20,7 +22,7 @@ import themeSwitcher from "@/components/themeSwitcher";
   display: flex;
   direction: ltr;
   .logo-container {
-    width: 50%;
+    width: 150px;
     height: 100px;
     display: flex;
     justify-content: start;
@@ -31,7 +33,7 @@ import themeSwitcher from "@/components/themeSwitcher";
     }
   }
   .items-container {
-    width: 50%;
+    width: 88%;
     height: 100px;
     display: flex;
     justify-content: end;
