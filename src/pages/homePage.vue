@@ -3,7 +3,7 @@
     <animationTopToBottom v-if="animation" />
     <div v-else>
       <navigation />
-      <div class="container">
+      <div class="container application_animation">
         <div class="text-conatiner mt-5 pt-4">
           <span class="size_4xl primary_color">{{ $t("hello") }}</span>
           <p class="size_very_large">{{ $t("name") }}</p>
@@ -54,6 +54,7 @@ const tools = () => {
   @media (max-width: 800px) {
     .text-conatiner {
       width: 100%;
+      padding: 0px 15px;
     }
   }
 }
