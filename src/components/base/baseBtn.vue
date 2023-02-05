@@ -12,6 +12,7 @@
       dark_background: darkBackground,
       disbaled_button: disabledButton,
     }"
+    :dir="direction"
   >
     <div class="" v-if="loading">
       <div class="spinner-border spinner-border-sm" role="status"></div>
@@ -27,7 +28,8 @@
           'bi-envelope-at': emailIcon,
           'bi-send-check': sendIcon,
           'bi-chat-dots': chatIcon,
-          'bi-arrow-bar-right': arrowIcon,
+          'bi-arrow-bar-right': rightArrowIcon,
+          'bi-arrow-bar-left': leftArrowIcon,
         }"
       ></i>
     </div>
@@ -101,8 +103,13 @@ const disabledButton = computed(() => {
     return true;
   }
 });
-const arrowIcon = computed(() => {
-  if (props.icon == "arrow") {
+const rightArrowIcon = computed(() => {
+  if (props.icon == "rightArrow") {
+    return true;
+  }
+});
+const leftArrowIcon = computed(() => {
+  if (props.icon == "leftArrow") {
     return true;
   }
 });
@@ -132,15 +139,19 @@ const props = defineProps({
     default: false,
     required: false,
   },
+  direction: {
+    type: String,
+    default: "",
+    required: true,
+  },
 });
 </script>
 
 <style lang="scss" scoped>
 .button {
-  padding: 5px;
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  direction: ltr;
 }
 .disbaled_button {
   background: rgba(0, 0, 0, 0.2);

@@ -4,12 +4,12 @@
     <div v-else>
       <navigation />
       <div class="container application_animation">
-        <div class="text-conatiner mt-5 pt-4">
+        <div class="text-conatiner">
           <span class="size_4xl primary_color">{{ $t("hello") }}</span>
           <p class="size_very_large">{{ $t("name") }}</p>
           <p class="size_very_large">{{ $t("position") }}</p>
           <p class="size_small">{{ $t("info") }}</p>
-          <baseBtn @click="tools" :name="$t('tools')" color="primary" icon="arrow" />
+          <baseBtn @click="tools" :name="$t('tools')" color="primary" icon="rightArrow" direction="ltr" />
         </div>
       </div>
     </div>
@@ -50,11 +50,12 @@ const tools = () => {
   flex-direction: column;
   .text-conatiner {
     width: 40%;
+    padding-top: 70px;
   }
   @media (max-width: 800px) {
     .text-conatiner {
       width: 100%;
-      padding: 0px 15px;
+      padding: 90px 15px;
     }
   }
 }

@@ -1,6 +1,7 @@
 @import '../variables/_themeColors.scss';
 .primary_background{
-    background-color: var(--primary-);
+    background: rgb(39,27,236);
+    background: linear-gradient(142deg, rgba(39,27,236,1) 0%, rgba(159,159,245,1) 84%);
     color: var(--light-);
 }
 .secondary_background{

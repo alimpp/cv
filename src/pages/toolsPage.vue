@@ -1,7 +1,11 @@
 <template>
   <div class="tools-container">
-    <animationBottomToTop v-if="animation" />
-    <div class="application_animation" v-else>
+    <animationBottomToTop v-if="animationBottom === true" />
+    <animationTopToBottom v-if="animationTop === true" />
+    <div
+      class="application_animation"
+      v-if="animationBottom === false || animationTop === false"
+    >
       <navigation />
       <div class="container">
         <baseDivider class="mx-4" :text="$t('tools')" width="150px" />
@@ -13,8 +17,6 @@
           <img src="@/assets/images/ts.png" />
           <img src="@/assets/images/java.png" />
           <img src="@/assets/images/node.png" />
-          <img src="@/assets/images/exp.png" />
-          <img src="@/assets/images/mongo.png" />
           <img src="@/assets/images/postgress.png" />
           <img src="@/assets/images/npm.png" />
           <img src="@/assets/images/rest.png" />
@@ -29,8 +31,18 @@
           <img src="@/assets/images/html.png" />
           <img src="@/assets/images/css.png" />
         </div>
-        <div class="d-flex justify-content-center align-items-center w-100 mt-5 mb-5">
-          <baseBtn :name="$t('work')" color="primary" icon="arrow" />
+        <div
+          class="d-flex justify-content-center align-items-center w-100 mt-5 mb-5"
+          dir="ltr"
+        >
+          <baseBtn
+            :name="$t('about')"
+            color="primary"
+            icon="leftArrow"
+            direction="rtl"
+            @click="backToHomePage"
+          />
+          <baseBtn class="mx-2" :name="$t('work')" color="primary" icon="rightArrow" />
         </div>
       </div>
     </div>
@@ -39,16 +51,25 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
 import animationBottomToTop from "@/components/animations/animationBottomToTop";
+import animationTopToBottom from "@/components/animations/animationTopToBottom";
 import navigation from "@/components/navigation";
 import baseDivider from "@/components/base/baseDivider";
 import baseBtn from "@/components/base/baseBtn";
-const animation = ref(false);
+
+const animationBottom = ref(false);
+const animationTop = ref(false);
+const router = useRouter();
+
+const backToHomePage = () => {
+    router.push('/')
+};
 
 onMounted(() => {
-  animation.value = true;
+  animationBottom.value = true;
   setTimeout(() => {
-    animation.value = false;
+    animationBottom.value = false;
   }, 1400);
 });
 </script>
@@ -66,8 +87,8 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     img {
-      width: 80px;
-      height: 80px;
+      width: 50px;
+      height: 50px;
       margin: 10px 30px;
     }
   }
