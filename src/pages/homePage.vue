@@ -9,7 +9,7 @@
           <p class="size_very_large">{{ $t("name") }}</p>
           <p class="size_very_large">{{ $t("position") }}</p>
           <p class="size_small">{{ $t("info") }}</p>
-          <baseBtn @click="tools" :name="$t('tools')" color="primary" />
+          <baseBtn @click="tools" :name="$t('tools')" color="primary" icon="arrow" />
         </div>
       </div>
     </div>

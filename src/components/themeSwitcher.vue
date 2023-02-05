@@ -9,7 +9,7 @@
     />
     <img
       @click="changeTheme"
-      src="@/assets/images/sun.png"
+      src="@/assets/images/sunn.png"
       v-if="watchTheme === 'dark'"
       alt="sun"
       class="application_pointer application_animation"

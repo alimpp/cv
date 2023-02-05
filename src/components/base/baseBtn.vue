@@ -19,16 +19,17 @@
     </div>
 
     <div v-else>
+      {{ name }}
       <i
-        class="bi"
+        class="bi pt-1"
         :class="{
           'bi-person-fill': userIcon,
           'bi-envelope-at': emailIcon,
           'bi-send-check': sendIcon,
           'bi-chat-dots': chatIcon,
+          'bi-arrow-bar-right': arrowIcon,
         }"
       ></i>
-      {{ name }}
     </div>
   </button>
 </template>
@@ -100,6 +101,11 @@ const disabledButton = computed(() => {
     return true;
   }
 });
+const arrowIcon = computed(() => {
+  if (props.icon == "arrow") {
+    return true;
+  }
+});
 const props = defineProps({
   color: {
     type: String,
@@ -134,6 +140,7 @@ const props = defineProps({
   padding: 5px;
   border: none;
   border-radius: 5px;
+  direction: ltr;
 }
 .disbaled_button {
   background: rgba(0, 0, 0, 0.2);
