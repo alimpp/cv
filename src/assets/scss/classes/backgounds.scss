@@ -17,7 +17,8 @@
     color: var(--light-);
 }
 .warning_background{
-    background-color: var(--warning-);
+    background: rgb(232,255,0);
+    background: linear-gradient(77deg, rgba(232,255,0,1) 0%, rgba(58,60,42,1) 100%);
     color: var(--dark-);
 }
 .info_background{

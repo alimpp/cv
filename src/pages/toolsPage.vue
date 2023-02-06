@@ -44,7 +44,7 @@
           <baseBtn
             class="mx-2"
             :name="$t('work')"
-            color="primary"
+            color="warning"
             icon="rightArrow"
             @click="goToWorksPage"
           />
