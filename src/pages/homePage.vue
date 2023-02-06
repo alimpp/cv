@@ -9,7 +9,19 @@
           <p class="size_very_large">{{ $t("name") }}</p>
           <p class="size_very_large">{{ $t("position") }}</p>
           <p class="size_small">{{ $t("info") }}</p>
-          <baseBtn @click="tools" :name="$t('tools')" color="primary" icon="rightArrow" direction="ltr" />
+          <div class="d-flex">
+            <i class="bi bi-linkedin"></i>
+            <i class="bi bi-github px-2"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+          <baseBtn
+            @click="goToToolsPage"
+            :name="$t('tools')"
+            color="primary"
+            icon="rightArrow"
+            direction="ltr"
+            class="mt-3"
+          />
         </div>
       </div>
     </div>
@@ -24,7 +36,7 @@ import navigation from "@/components/navigation";
 import animationTopToBottom from "@/components/animations/animationTopToBottom";
 
 const animation = ref(false);
-const router = useRouter()
+const router = useRouter();
 
 onMounted(() => {
   animation.value = true;
@@ -33,13 +45,9 @@ onMounted(() => {
   }, 2900);
 });
 
-const tools = () => {
-    animation.value = true
-    setTimeout(() => {
-        animation.value = false
-        router.push('/experince-tools')
-    } , 1600)
-}
+const goToToolsPage = () => {
+  router.push("/experince-tools");
+};
 </script>
 
 <style lang="scss" scoped>

@@ -14,6 +14,13 @@ const routes = [
     component: function () {
       return import('@/pages/toolsPage.vue')
     }
+  },
+  {
+    path: '/experince-works',
+    name: 'experince works page',
+    component: function () {
+      return import('@/pages/worksPage.vue')
+    }
   }
 ]
 

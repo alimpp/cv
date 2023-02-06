@@ -1,10 +1,9 @@
 <template>
   <div class="tools-container">
-    <animationBottomToTop v-if="animationBottom === true" />
     <animationTopToBottom v-if="animationTop === true" />
     <div
       class="application_animation"
-      v-if="animationBottom === false || animationTop === false"
+      v-if="animationTop === false"
     >
       <navigation />
       <div class="container">
@@ -42,7 +41,13 @@
             direction="rtl"
             @click="backToHomePage"
           />
-          <baseBtn class="mx-2" :name="$t('work')" color="primary" icon="rightArrow" />
+          <baseBtn
+            class="mx-2"
+            :name="$t('work')"
+            color="primary"
+            icon="rightArrow"
+            @click="goToWorksPage"
+          />
         </div>
       </div>
     </div>
@@ -52,7 +57,6 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import animationBottomToTop from "@/components/animations/animationBottomToTop";
 import animationTopToBottom from "@/components/animations/animationTopToBottom";
 import navigation from "@/components/navigation";
 import baseDivider from "@/components/base/baseDivider";
@@ -63,14 +67,17 @@ const animationTop = ref(false);
 const router = useRouter();
 
 const backToHomePage = () => {
-    router.push('/')
+  router.push("/");
+};
+const goToWorksPage = () => {
+  router.push("/experince-works");
 };
 
 onMounted(() => {
-  animationBottom.value = true;
+  animationTop.value = true;
   setTimeout(() => {
-    animationBottom.value = false;
-  }, 1400);
+    animationTop.value = false;
+  }, 3000);
 });
 </script>
 
